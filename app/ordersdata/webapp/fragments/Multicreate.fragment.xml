@@ -1,0 +1,84 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
+    
+    <Dialog id="idOrderDetailsDialog" title="Orders_OrderItems " contentWidth="900px">
+        <content>
+           
+            <f:SimpleForm   title="Orders"   layout="GridLayout">
+                
+                <Label text=" ID"	/>
+                <Input id="idOrderID4"  placeholder="Enter Order ID" width="300px" type="Number" liveChange="onIDMultiLiveChange">
+                    <layoutData>
+                        <l:GridData span="L4 M4" />
+                    </layoutData>
+                </Input>
+
+                <Label text="Customer Name" />
+                <Input id="idCustomerName1"  placeholder="Enter Customer Name" width="300px" editable="true">
+                    <layoutData>
+                        <l:GridData span="L4 M4" />
+                    </layoutData>
+                </Input>
+
+                <Label text="Order Date" />
+                <Input id="idOrderDate1" value="dd-MM-yyyy"  placeholder="Enter Order Date" width="300px" editable="false">
+                    <layoutData>
+                        <l:GridData span="L4 M4" />
+                    </layoutData>
+                </Input>
+            </f:SimpleForm>
+
+            <!-- <VBox> -->
+                <Table id="idOrderItemsTable"  >
+              <headerToolbar>
+					<Toolbar>
+						<Title text=" Order Items "/>
+						<ToolbarSpacer/>
+						<Button text="Add" icon="sap-icon://add" press="onAddRow"/>
+					</Toolbar>
+				</headerToolbar>
+
+                    <columns>
+                        <Column>
+                            <Text text="ItemID" />
+                        </Column>
+                        <Column>
+                            <Text text="Product Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Quantity" />
+                        </Column>
+                        <Column>
+                            <Text text="Price" />
+                        </Column>
+                        <!-- <Column>
+                            <Text text="OrderID" />
+                        </Column> -->
+                        <Column>
+                        <Text text="Actions" />
+                    </Column>
+                    </columns>
+                    <items>
+                         <!-- <ColumnListItem>
+                            <cells>
+                                <Text text="{ItemID}" />
+                                <Text text="{ProductName}" />
+                                <Text text="{Quantity}" />
+                                <Text text="{Price}" />
+                                <Text text="{OrderID}" />
+                                <Button  icon="sap-icon://delete" press="onDeleteRow" />
+                            </cells>
+                        </ColumnListItem>  -->
+                    </items>
+                </Table>
+            <!-- </VBox> -->
+        </content>
+        <beginButton>
+            <Button text="Submit" type="Emphasized" press="onMulticreateSubmit"/>
+        </beginButton>
+        <endButton>
+            <Button text="Close" type="Reject" press="onMulticreateClose"/>
+        </endButton>
+    </Dialog>
+
+</core:FragmentDefinition>

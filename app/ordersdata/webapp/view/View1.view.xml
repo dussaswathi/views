@@ -1,0 +1,81 @@
+<mvc:View
+    controllerName="ordersdata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="Order Management">
+        
+        <Toolbar>
+            <content>
+                <ToolbarSpacer />
+                <!-- <Button text="Create Order"  press="onCreateOrders" type="Emphasized" />
+                <Button text="Create OrderItems" press="onCreateOrderItems" type="Emphasized"></Button> -->
+                 <Button text="SingleCreate" press="onCreateAll" type="Emphasized"></Button>
+                 <Button  text="multipleCreate" press="OnmultipleCreate" type="Emphasized"></Button>
+                  <Button text="MultiDelete" press="onMultiDelete" type="Reject" ></Button>
+                   <Button text="MultiUpdate" press="onMultiUpdate" type="Emphasized" ></Button>
+            </content>
+        </Toolbar>
+        
+          <Table id="idviewtable" items="{
+                    path: 'ordersModel>/'
+                }" 	mode="MultiSelect"
+			  >
+            <columns>
+                <Column  >
+                    <Text text="ID" />
+                </Column>
+                <Column>
+                    <Text text="ItemID" />
+                </Column>
+                <Column>
+                    <Text text="Order Date" />
+                </Column>
+                <Column>
+                    <Text text="Customer Name" />
+                </Column>
+                <Column>
+                    <Text text="Product Name" />
+                </Column>
+                <Column>
+                    <Text text="Quantity" />
+                </Column>
+                <Column>
+                    <Text text="Price" />
+                </Column>
+                <Column>
+                    <Text text="TotalAmount" />
+                </Column>
+                <Column>
+                    <Text text="Delete" />
+                </Column>
+                <Column>
+                    <Text text="Edit" />
+                </Column>
+            </columns>
+            
+            <items>
+                <ColumnListItem type="Navigation" press="OnpressDetailPgae">
+                    <cells>
+                        <Text text="{ordersModel>ID}" />
+                        <Text text="{ordersModel>ItemID}" />
+                        <Text text="{path: 'ordersModel>OrderDate', formatter: '.formatter.formatDate'}" />
+                        <Text text="{ordersModel>CustomerName}" />
+                        <Text text="{ordersModel>ProductName}" />
+                        <Text text="{ordersModel>Quantity}" />
+                        <Text text="{ordersModel>Price}" />
+                        <Text text="{ordersModel>TotalAmount}"></Text>
+
+                       
+                        <Button icon="sap-icon://delete" type="Reject" press="onDeleteitemsPress" />
+                        <Button text="Update" icon="sap-icon://edit" press="onUpdatePress" />
+                    </cells>
+              
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+    	<!-- </FlexibleColumnLayout> -->
+</mvc:View>

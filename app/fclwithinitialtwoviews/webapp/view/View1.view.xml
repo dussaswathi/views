@@ -1,0 +1,59 @@
+<!-- 
+<mvc:View controllerName="fclwithinitialtwoviews.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="List">
+
+     <content>
+              <List id="customerList" items="{ordersModel>/}">
+                <items>
+                    <StandardListItem
+                        title="{ordersModel>ID}"
+                        description="{ordersModel>CustomerName}" type="Navigation"  press="Onpressitemdetails" />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View> -->
+<mvc:View controllerName="fclwithinitialtwoviews.controller.View1"
+           xmlns:mvc="sap.ui.core.mvc"
+           xmlns="sap.m"
+           id="view1">
+    <Page id="page" title="Orders">
+     <Toolbar>
+            <content>
+                <ToolbarSpacer />
+                 <Button text="SingleCreate" icon="sap-icon://add" press="onCreateopen" type="Emphasized"></Button>
+                  <Button text="Delete"  press="onsingleDelete" type="Reject" ></Button>
+            </content>
+        </Toolbar>
+        <content>
+           <Table id="orderstable" items="{
+                    path: 'ordersModel>/'
+                }" 	mode="MultiSelect"
+			  >
+                <columns>
+                    <Column>
+                        <Text text="ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Customer Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Action" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Navigation" press="Onpressitemdetails">
+                        <cells>
+                            <Text text="{ordersModel>ID}" />
+                            <Text text="{ordersModel>CustomerName}" />
+                            <Button  icon="sap-icon://edit" press="onsingleUpdate"  ></Button>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

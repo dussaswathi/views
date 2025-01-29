@@ -1,0 +1,41 @@
+<mvc:View controllerName="fclwithinitialtwoviews.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="pages" title="OrderItem Details">
+        <content>
+            <Table id="detailTable" items="{
+                    path: 'detailModel>/'
+                }">
+                <columns>
+                    <Column>
+                        <Text text="Item ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Product Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Quantity" />
+                    </Column>
+                    <Column>
+                        <Text text="Price" />
+                    </Column>
+                    <Column>
+                        <Text text="Total Amount" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{detailModel>ItemID}" />
+                            <Text text="{detailModel>ProductName}" />
+                            <Text text="{detailModel>Quantity}" />
+                            <Text text="{detailModel>Price}" />
+                            <Text text="{detailModel>TotalAmount}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

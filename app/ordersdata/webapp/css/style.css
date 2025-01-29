@@ -1,0 +1,19 @@
+
+
+.errorText {
+    background-color: lightcoral; 
+}
+.warningText {
+    background-color:lightgoldenrodyellow  
+}
+.successText {
+    background-color: lightgreen;   
+}
+.informationText {
+    background-color: lightblue;  
+}
+.defaultText {
+    background-color: lightgray; 
+}
+
+

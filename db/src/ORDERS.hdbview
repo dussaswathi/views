@@ -1,0 +1,16 @@
+VIEW "ORDERS" AS
+SELECT 
+    o.ID ,
+    o.OrderDate,
+    o.CustomerName,
+    i.ItemID,
+    i.ProductName,
+    i.Quantity,
+    i.Price,
+    (i.Quantity * i.Price) AS TotalAmount
+FROM 
+    orderstable_Orders AS o
+JOIN 
+    orderstable_OrderItems AS i
+ON 
+    o.ID = i.OrderID_ID;

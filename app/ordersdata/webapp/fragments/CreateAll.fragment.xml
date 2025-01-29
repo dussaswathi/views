@@ -1,0 +1,36 @@
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+<Dialog id="idOrder_Oredritem" title="Allitems">
+<content>
+<f:SimpleForm>
+<f:content>
+
+        <Label text="ID"/>
+                    <Input id="idIDs1" type="Number" placeholder="Enter ID"  liveChange="onIDLiveChange"/>
+                    
+                    <Label text="CustomerName"/>
+                    <Input id="idCustomerNames2" type="Text" placeholder="Enter CustomerName" editable="true"/>
+                    
+<!-- <Label text="TotalAmount"/>
+<Input id="idTotalAmounts3" type="Text" placeholder="Enter TotalAmount"/> -->
+<Label text="ItemID"/>
+<Input id="idItemIDinputs4" type="Number" placeholder="Enter ItemID"/>
+<Label text="ProductName"/>
+<Input id="idProductNameinputs5" type="Text" placeholder="Enter ProductName"/>
+<Label text="Quantity"/>
+<Input id="idQuantityinputs6" type="Number" placeholder="Enter Quantity"/>
+<Label text="Price"/>
+<Input id="idPriceinputs7" type="Number" placeholder="Enter Price"/>
+<Label text="OrderID"/>
+<Input id="idOrderIDinput8" type="Number" placeholder="Enter OrderID"/>
+</f:content>
+</f:SimpleForm>
+</content>
+<beginButton>
+<Button text="Submit" type="Emphasized" press="OnOrders_OrderitemsSubmit"/>
+</beginButton>
+<endButton>
+<Button text="Close" type="Reject" press="OnOrders_Orderitemsclose"/>
+</endButton>
+</Dialog>
+</core:FragmentDefinition>

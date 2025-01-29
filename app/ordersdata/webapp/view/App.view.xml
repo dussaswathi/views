@@ -1,0 +1,28 @@
+<!-- <mvc:View controllerName="ordersdata.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+ 
+    <App id="app">
+    </App>
+  
+</mvc:View> -->
+<!-- <mvc:View xmlns="sap.f" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" controllerName="ordersdata.controller.App" height="100%">
+<FlexibleColumnLayout id="fcl">
+<landmarkInfo>
+</landmarkInfo>
+<beginColumnPages>
+<mvc:XMLView id="beginView" async="true" viewName="ordersdata.view.View1"/>
+</beginColumnPages>
+</FlexibleColumnLayout>
+</mvc:View> -->
+
+<mvc:View xmlns="sap.f" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" controllerName="ordersdata.controller.App" height="100%">
+  <FlexibleColumnLayout id="fcl">
+    <!-- Begin column (75% width) -->
+    <beginColumnPages>
+      <mvc:XMLView id="beginView" async="true" viewName="ordersdata.view.View1"/>
+    </beginColumnPages>
+    <!-- Mid column (25% width) will be dynamically added when the layout is TwoColumnsMidExpanded -->
+  </FlexibleColumnLayout>
+</mvc:View>

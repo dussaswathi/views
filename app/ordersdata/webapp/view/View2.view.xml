@@ -1,0 +1,37 @@
+<mvc:View controllerName="ordersdata.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout.form">
+    <Page id="pages" title="{i18n>title}">
+        <headerContent>
+            <Button type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close end column" />
+        </headerContent>
+        <content>
+            <!-- SimpleForm to display the data -->
+            <layout:SimpleForm id="simpleForm" editable="false" layout="ResponsiveGridLayout">
+                <Label text="Item ID" />
+                <Text text="{formData>/ItemID}" />
+                
+                <Label text="Customer Name" />
+                <Text text="{formData>/CustomerName}" />
+                
+                <Label text="Order ID" />
+                <Text text="{formData>/ID}" />
+                
+                <Label text="Price" />
+                <Text text="{formData>/Price}" />
+                
+                <Label text="Product Name" />
+                <Text text="{formData>/ProductName}" />
+                
+                <Label text="Quantity" />
+                <Text text="{formData>/Quantity}" />
+                
+                <Label text="Total Amount" />
+                <Text text="{formData>/TotalAmount}" />
+            </layout:SimpleForm>
+            
+           
+        </content>
+    </Page>
+</mvc:View>
