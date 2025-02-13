@@ -1,20 +1,3 @@
-<!-- 
-<mvc:View controllerName="fclwithinitialtwoviews.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="List">
-
-     <content>
-              <List id="customerList" items="{ordersModel>/}">
-                <items>
-                    <StandardListItem
-                        title="{ordersModel>ID}"
-                        description="{ordersModel>CustomerName}" type="Navigation"  press="Onpressitemdetails" />
-                </items>
-            </List>
-        </content>
-    </Page>
-</mvc:View> -->
 <mvc:View controllerName="fclwithinitialtwoviews.controller.View1"
            xmlns:mvc="sap.ui.core.mvc"
            xmlns="sap.m"
@@ -23,15 +6,19 @@
      <Toolbar>
             <content>
                 <ToolbarSpacer />
-                 <Button text="SingleCreate" icon="sap-icon://add" press="onCreateopen" type="Emphasized"></Button>
+                 <Button text="Create" icon="sap-icon://add" press="onCreateopen" type="Emphasized"></Button>
                   <Button text="Delete"  press="onsingleDelete" type="Reject" ></Button>
             </content>
         </Toolbar>
         <content>
            <Table id="orderstable" items="{
-                    path: 'ordersModel>/'
+                    path: '/orders'
                 }" 	mode="MultiSelect"
 			  >
+               <!-- <Table id="orderstable" items="{
+                    path: 'ordersModel>/'
+                }" 	mode="MultiSelect"
+			  > -->
                 <columns>
                     <Column>
                         <Text text="ID" />
@@ -45,10 +32,14 @@
                 </columns>
 
                 <items>
-                    <ColumnListItem type="Navigation" press="Onpressitemdetails">
-                        <cells>
-                            <Text text="{ordersModel>ID}" />
-                            <Text text="{ordersModel>CustomerName}" />
+                    <ColumnListItem type="Active"  press="Onpressitemdetails">
+                        <cells > 
+                            <Text text="{ID}" />
+                             <Text text="{CustomerName}" />
+                             <!-- <Text text="{ordersModel>ID}"/>
+                           
+                             <Text text="{ordersModel>CustomerName}" /> -->
+                             <!-- <Text text="{ordersModel>ProductName}" /> -->
                             <Button  icon="sap-icon://edit" press="onsingleUpdate"  ></Button>
                         </cells>
                     </ColumnListItem>

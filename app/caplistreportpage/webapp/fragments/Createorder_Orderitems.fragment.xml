@@ -1,0 +1,38 @@
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+<Dialog id="idOrder_Oredritem" title="Order_OredrItems"  core:require="{handler:'caplistreportpage/ext/controller/Create'}" >
+<content>
+<f:SimpleForm>
+<f:content>
+
+ <Label text="ID"/>
+  <Input id="idID" type="Number" placeholder="Enter ID"  liveChange="onIDLiveChange"/>
+                    
+<Label text="CustomerName"/>
+<Input id="idCustomerNames" type="Text" placeholder="Enter CustomerName" editable="true"/>
+                    
+<Label text="ItemID"/>
+<Input id="idItemIDinputs" type="Number" placeholder="Enter ItemID"/>
+
+<Label text="ProductName"/>
+<Input id="idProductNameinputs" type="Text" placeholder="Enter ProductName"/>
+
+<Label text="Quantity"/>
+<Input id="idQuantityinputs" type="Number" placeholder="Enter Quantity"/>
+
+<Label text="Price"/>
+<Input id="idPriceinputs" type="Number" placeholder="Enter Price"/>
+
+<Label text="OrderID"/>
+<Input id="idOrderIDinput" type="Number" placeholder="Enter OrderID"/>
+</f:content>
+</f:SimpleForm>
+</content>
+<beginButton>
+<Button text="Submit" type="Emphasized" press="handler.onSubmit"/>
+</beginButton>
+<endButton>
+<Button text="Close" type="Reject" press="handler.onClose"/>
+</endButton>
+</Dialog>
+</core:FragmentDefinition>

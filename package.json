@@ -8,13 +8,14 @@
   "dependencies": {
     "@cap-js/hana": "^1",
     "@sap/cds": "^8",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.7",
     "express": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.8.0",
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^8",
+    "dotenv": "^16.4.7",
     "mbt": "^1.2.29",
     "rimraf": "^5.0.5"
   },
@@ -25,11 +26,20 @@
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
     "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-fclwithinitialtwoviews": "cds watch --open fclwithinitialtwoviews/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-fclwithinitialtwoviews": "cds watch --open fclwithinitialtwoviews/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-newapplication": "cds watch --open newapplication/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-caplistreportpage": "cds watch --open caplistreportpage/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-listreportpage1": "cds watch --open listreportpage1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-listreportpage": "cds watch --open listreportpage/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "sql": {
       "native_hana_associations": false
     }
-  }
+  },
+  "sapux": [
+    "app/caplistreportpage",
+    "app/listreportpage1",
+    "app/listreportpage"
+  ]
 }

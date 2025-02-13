@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified">
+	<Dialog id="fileUploadDialog" title="Upload File">
+		<content>
+			<f:SimpleForm>
+				<f:content>
+					
+					
+					<u:FileUploader id="fileUploader" width="100%" placeholder="Drop a file" name="myFileUpload" uploadUrl="/upload"
+						icon="sap-icon://attachment" fileType="xlsx" style="Emphasized" buttonText=" " uploadComplete=".onUploadComplete"
+						 change=".onFileSelectionChange"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<!-- <beginButton>
+			<Button text="Submit" type="Emphasized" press="onSubmitFile"/>
+		</beginButton> -->
+		<endButton>
+			<Button text="Close" type="Reject" press="oncloseUploadFile"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

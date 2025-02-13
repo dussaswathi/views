@@ -5,7 +5,17 @@
         <content>
             <Table id="detailTable" items="{
                     path: 'detailModel>/'
-                }">
+                }" mode="MultiSelect" selectionChange="onSelectionChange" >
+                 <headerToolbar>
+					<Toolbar>
+						<Title text=" Order Items "/>
+						<ToolbarSpacer/>
+                        <Button text="Add" icon="sap-icon://add" press="onAddRow" id="addButton"/>
+						 <Button  text="Excel_Dowload" icon="sap-icon://download" press="Onexceldownload" />
+                        <Button  text="Excel_Upload"  icon="sap-icon://upload" press="OnexcelUpload"  /> 
+                        <Button  text="Empty_Excel_"  icon="sap-icon://download" press="OnEmptyexceldownload"  /> 
+					</Toolbar>
+				</headerToolbar>
                 <columns>
                     <Column>
                         <Text text="Item ID" />
@@ -22,20 +32,36 @@
                     <Column>
                         <Text text="Total Amount" />
                     </Column>
+                      <Column>
+                        <Text text="Actions " />
+                    </Column>
                 </columns>
 
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{detailModel>ItemID}" />
-                            <Text text="{detailModel>ProductName}" />
-                            <Text text="{detailModel>Quantity}" />
-                            <Text text="{detailModel>Price}" />
-                            <Text text="{detailModel>TotalAmount}" />
+                             <Input value="{detailModel>ItemID}" id="itemIDInput" editable="{= !${detailModel>TotalAmount} }"/>
+                              
+                            <Input value="{detailModel>ProductName}" editable="{detailModel>editable}" />
+                            <Input value="{detailModel>Quantity}" editable="{detailModel>editable}"/>
+                            <Input value="{detailModel>Price}"  editable="{detailModel>editable}"/>
+                             <Text text="{detailModel>TotalAmount}" /> 
+                          <!-- <Button type="Reject" icon="sap-icon://delete" press="onDeleteRow" visible="{= ${detailModel>editable} }"/> -->
+
+                           <Button type="Reject" icon="sap-icon://delete" press="onDeleteRow" visible="{= ${detailModel>isNew} ? true : false }"/>
+
+
+                            <!-- <Button type="Reject" icon="sap-icon://delete" press="onDeleteRow" visible="{= ${detailModel>isNew} }"/> -->
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
         </content>
+         <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Save"  press="onSaveandupdatebutton" id="saveButton" type="Emphasized"/>
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:View>
