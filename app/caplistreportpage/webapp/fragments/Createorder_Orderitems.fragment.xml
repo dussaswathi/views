@@ -6,7 +6,7 @@
 <f:content>
 
  <Label text="ID"/>
-  <Input id="idID" type="Number" placeholder="Enter ID"  liveChange="onIDLiveChange"/>
+  <Input id="idID" type="Number" placeholder="Enter ID"  liveChange="handler.onIDLiveChange"/>
                     
 <Label text="CustomerName"/>
 <Input id="idCustomerNames" type="Text" placeholder="Enter CustomerName" editable="true"/>

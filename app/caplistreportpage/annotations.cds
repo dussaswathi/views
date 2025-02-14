@@ -1,39 +1,56 @@
 using OrderService as service from '../../srv/Data_srv';
+
 annotate service.Orders with @(
-    UI.FieldGroup #GeneratedGroup : {
-        $Type : 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type : 'UI.DataField',
-                Label : 'OrderDate',
-                Value : OrderDate,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'CustomerName',
-                Value : CustomerName,
-            },
-        ],
-    },
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
-            ID : 'GeneratedFacet1',
-            Label : 'General Information',
-            Target : '@UI.FieldGroup#GeneratedGroup',
-        },
+            ID : 'OrderItemsFacet',
+            Label : 'Order Items',
+            Target : 'Items/@UI.LineItem',
+        }
     ],
     UI.LineItem : [
+         {
+            $Type : 'UI.DataField',
+            Label : 'OrderID',
+            Value : ID,
+        },
         {
             $Type : 'UI.DataField',
-            Label : 'OrderDate',
+            Label : 'Order Date',
             Value : OrderDate,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'CustomerName',
+            Label : 'Customer Name',
             Value : CustomerName,
         },
     ],
 );
+
+annotate service.OrderItems with @(
+    UI.LineItem : [
+        {
+            $Type : 'UI.DataField',
+            Label : 'Item ID',
+            Value : ItemID,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Product Name',
+            Value : ProductName,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Quantity',
+            Value : Quantity,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Price',
+            Value : Price,
+        }
+    ]
+);
+
 

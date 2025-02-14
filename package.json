@@ -8,7 +8,7 @@
   "dependencies": {
     "@cap-js/hana": "^1",
     "@sap/cds": "^8",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.9.7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "express": "^4"
   },
   "devDependencies": {
@@ -30,7 +30,9 @@
     "watch-newapplication": "cds watch --open newapplication/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-caplistreportpage": "cds watch --open caplistreportpage/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-listreportpage1": "cds watch --open listreportpage1/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-listreportpage": "cds watch --open listreportpage/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-listreportpage": "cds watch --open listreportpage/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-listreportnew": "cds watch --open listreportnew/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-listreport": "cds watch --open listreport/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "sql": {
@@ -40,6 +42,11 @@
   "sapux": [
     "app/caplistreportpage",
     "app/listreportpage1",
-    "app/listreportpage"
+    "app/listreportpage",
+    "app/listreportnew",
+    "app/listreportpage1",
+    "app/listreport",
+    "app/listreport",
+    "app/listreportpage1"
   ]
 }

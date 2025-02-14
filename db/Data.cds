@@ -1,7 +1,7 @@
 context orderstable {
 
     entity Orders {
-        key ID           : UUID;
+        key ID           : String;
             OrderDate    : Date;
             CustomerName : String(100);
             Items        : Composition of many OrderItems
