@@ -34,6 +34,7 @@ annotate service.OrderItems with @(
             $Type : 'UI.DataField',
             Label : 'Item ID',
             Value : ItemID,
+            
         },
         {
             $Type : 'UI.DataField',

@@ -109,11 +109,6 @@
           "pattern": "Orders({key}):?query:",
           "name": "OrdersObjectPage",
           "target": "OrdersObjectPage"
-        },
-        {
-          "pattern": "Orders({key})/Items({key2}):?query:",
-          "name": "OrderItemsObjectPage",
-          "target": "OrderItemsObjectPage"
         }
       ],
       "targets": {
@@ -172,19 +167,33 @@
                     "route": "OrderItemsObjectPage"
                   }
                 }
+              },
+              "controlConfiguration": {
+                "Items/@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "idadd": {
+                      "press": "caplistreportpage.ext.controller.Add.OnAddrow",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Add"
+                    }
+                  }
+                }
               }
             }
           }
-        },
-        "OrderItemsObjectPage": {
-          "type": "Component",
-          "id": "OrderItemsObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/Orders/Items"
-            }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.ObjectPageController": {
+            "controllerName": "caplistreportpage.ext.controller.Headerremove"
           }
         }
       }
