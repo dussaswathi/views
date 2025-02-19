@@ -8,8 +8,8 @@
                 <Label text="Customer Name" />
                 <Input id="idCustomerName1Update1" placeholder="Enter Customer Name" width="300px" editable="true" />
 
-                <!-- <Label text="Order Date" />
-                <Input id="idOrderDate1Update1" value="dd-MM-yyyy" placeholder="Enter Order Date" width="300px" editable="false" /> -->
+                <Label text="Order Date" />
+                <Input id="idOrderDate1Update1"  placeholder="Enter Order Date" width="300px" editable="false" />
             </f:SimpleForm>
         </content>
         <beginButton>

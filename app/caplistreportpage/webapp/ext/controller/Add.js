@@ -52,6 +52,7 @@ var that;
             });
             oTable.addItem(oItem);
         },
+
         onorderitemsClose: function () {
             var oTable = sap.ui.getCore().byId("idOrderItemsTable");
             oTable.destroyItems();

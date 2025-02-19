@@ -15,6 +15,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				var oView = this.base.getView();
 				var objectpageheader=oView.byId("caplistreportpage::OrdersObjectPage--fe::ObjectPageDynamicHeaderTitle");
 				objectpageheader.setVisible(false);
+
+				
 			}
 		}
 	});

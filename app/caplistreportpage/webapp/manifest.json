@@ -109,6 +109,11 @@
           "pattern": "Orders({key}):?query:",
           "name": "OrdersObjectPage",
           "target": "OrdersObjectPage"
+        },
+        {
+          "pattern": "Orders({key})/Items({key2}):?query:",
+          "name": "OrderItemsObjectPage",
+          "target": "OrderItemsObjectPage"
         }
       ],
       "targets": {
@@ -146,6 +151,13 @@
                       "enabled": true,
                       "requiresSelection": false,
                       "text": "Update"
+                    },
+                    "idexcelupload": {
+                      "press": "caplistreportpage.ext.controller.Excel_Upload.Onexcelupload",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Excel_Upload"
                     }
                   }
                 }
@@ -161,13 +173,7 @@
             "settings": {
               "editableHeaderContent": false,
               "contextPath": "/Orders",
-              "navigation": {
-                "Items": {
-                  "detail": {
-                    "route": "OrderItemsObjectPage"
-                  }
-                }
-              },
+             
               "controlConfiguration": {
                 "Items/@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
@@ -179,11 +185,29 @@
                       "visible": true,
                       "enabled": true,
                       "requiresSelection": false,
-                      "text": "Add"
+                      "text": "Create order items"
+                    },
+                    "idupdateorderitems": {
+                      "press": "caplistreportpage.ext.controller.Updateorderitems.Onupdateorderitems",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Update"
                     }
                   }
                 }
               }
+            }
+          }
+        },
+        "OrderItemsObjectPage": {
+          "type": "Component",
+          "id": "OrderItemsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Orders/Items"
             }
           }
         }

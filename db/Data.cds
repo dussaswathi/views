@@ -9,7 +9,7 @@ context orderstable {
     }
 
     entity OrderItems {
-        key ItemID      : UUID;
+        key ItemID      : String;
             ProductName : String(100);
             Quantity    : Integer;
             Price       : Decimal(15, 2);
