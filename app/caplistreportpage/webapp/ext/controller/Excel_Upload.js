@@ -1,6 +1,7 @@
 sap.ui.define([
-    "sap/m/MessageToast"
-], function(MessageToast) {
+    "sap/m/MessageToast",
+    "sap/m/MessageBox"
+], function(MessageToast,MessageBox) {
     'use strict';
 var that;
     return {
@@ -15,10 +16,10 @@ var that;
         onFileSelectionChange: function (oEvent) {
             var oFileUploader = oEvent.getSource();
             var oFile = oFileUploader.oFileUpload.files[0];
-            if (!oFile) {
-                MessageToast.show("No file selected!");
-                return;
-            }
+            // if (!oFile) {
+            //     MessageToast.show("No file selected!");
+            //     return;
+            // }
             var oReader = new FileReader();
             oReader.onload = function (e) {
                 var data = new Uint8Array(e.target.result);
@@ -67,6 +68,10 @@ var that;
             MessageToast.show(validationErrors.join("\n"));
             return;
         }
+       
+   
+
+
             // Check for existing IDs and ItemIDs before creating new entries
             data.forEach(function (row) {
                 var orderID = String(row.ID);
@@ -97,7 +102,7 @@ var that;
                                         ProductName: row.ProductName,
                                         Quantity: row.Quantity,
                                         Price: row.Price,
-                                        OrderID_ID: orderID
+                                        OrderID_ID: String(row.OrderID_ID)
                                     };       
                                     // Create Order and OrderItem
                                     oModel.create("/Orders", newEntry, {
@@ -108,6 +113,8 @@ var that;
                                                     MessageToast.show("Order Item saved successfully!");
                                                     that.refresh();
                                                     that.FileUploadFragment.close();
+                                                    var oFileUploader = that.byId("fileUploader");  // Access the FileUploader control
+                                            oFileUploader.clear();
                                                 },
                                                 error: function (err) {
                                                     const oErrorResponse = JSON.parse(err.responseText);
@@ -126,10 +133,10 @@ var that;
                                     // If there are any existing IDs or ItemIDs, show an error message
                                     var errorMessage = "";
                                     if (existingIDs.length > 0) {
-                                        errorMessage += "The following Order IDs already exist: " + existingIDs.join(", ") + "\n";
+                                        errorMessage += " Order IDs already exist: " + existingIDs.join(", ") + "\n";
                                     }
                                     if (existingItemIDs.length > 0) {
-                                        errorMessage += "The following Item IDs already exist: " + existingItemIDs.join(", ");
+                                        errorMessage += " Item IDs already exist: " + existingItemIDs.join(", ");
                                     }
                                     MessageToast.show(errorMessage);
                                 }
@@ -140,7 +147,11 @@ var that;
             });
         },
 
-        oncloseUploadFile: function () {         
+        oncloseUploadFile: function () {    
+            var oFileUploader = this.byId("fileUploader");
+    if (oFileUploader) {
+        oFileUploader.destroy(); // Destroys the file uploader control
+    }     
                 that.FileUploadFragment.close();           
         }
     }

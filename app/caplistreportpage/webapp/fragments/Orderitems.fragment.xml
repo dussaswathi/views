@@ -25,24 +25,25 @@
                     <Column>
                         <Text text="Price" />
                     </Column>
-                      <Column>
+                      <!-- <Column>
                         <Text text="OrderID" />
-                    </Column>
+                    </Column> -->
                         <Column>
                         <Text text="Actions" />
                     </Column>
                    
                 </columns>
                 <items>
-                    <!-- <ColumnListItem>
+                    <ColumnListItem>
                         <cells>
-                            <Input value="{ItemID}" id="idItemIDInput1"  />
-                            <Input value="{ProductName}" id="idProductNameInput1" />
-                            <Input value="{Quantity}" id="idQuantityInput1" type="Number" />
-                            <Input value="{Price}" id="idPriceInput" type="Number" />
+                            <Input value="{ItemID}" id="iditeminput" />
+                            <Input value="{ProductName}" id="idproductnameinput" />
+                            <Input value="{Quantity}" id="idquantityinput" type="Number" />
+                            <Input value="{Price}" id="idpriceinput" type="Number" />
+                            <!-- <Input value="{OrderID_ID}"  type="Number" /> -->
                            
                         </cells>
-                    </ColumnListItem> -->
+                    </ColumnListItem>
                 </items>
             </Table>
         </content>

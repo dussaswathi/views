@@ -26,6 +26,14 @@ annotate service.Orders with @(
             Value : CustomerName,
         },
     ],
+    UI.HeaderFacets : [
+        
+    ],
+    UI.FieldGroup #Orderitems : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+        ],
+    },
 );
 
 annotate service.OrderItems with @(

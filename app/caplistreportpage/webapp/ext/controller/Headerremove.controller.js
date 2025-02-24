@@ -13,11 +13,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 				var oModel = this.base.getExtensionAPI().getModel();
 				var oView = this.base.getView();
-				var objectpageheader=oView.byId("caplistreportpage::OrdersObjectPage--fe::ObjectPageDynamicHeaderTitle");
-				objectpageheader.setVisible(false);
-
+				// var objectpageheader=oView.byId("caplistreportpage::OrdersObjectPage--fe::ObjectPageDynamicHeaderTitle");
+				// objectpageheader.setVisible(false);
 				
+
 			}
 		}
 	});
 });
+
+
+
+
+
