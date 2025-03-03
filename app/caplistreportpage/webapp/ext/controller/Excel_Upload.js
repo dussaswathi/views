@@ -5,6 +5,7 @@ sap.ui.define([
     'use strict';
 var that;
     return {
+        
         Onexcelupload: function(oEvent) {
             that=this;          
             if (!that.FileUploadFragment) {
@@ -12,14 +13,17 @@ var that;
             }
             that.FileUploadFragment.open();
         },
-
+        /**
+         * onFileSelectionChange: Reads and parses the uploaded Excel file when the user selects a file.
+         * This function uses the FileReader API to read the selected file and the XLSX library to parse it into JSON.
+         */
         onFileSelectionChange: function (oEvent) {
             var oFileUploader = oEvent.getSource();
             var oFile = oFileUploader.oFileUpload.files[0];
-            // if (!oFile) {
-            //     MessageToast.show("No file selected!");
-            //     return;
-            // }
+            if (!oFile) {
+                MessageToast.show("No file selected!");
+                return;
+            }
             var oReader = new FileReader();
             oReader.onload = function (e) {
                 var data = new Uint8Array(e.target.result);
@@ -32,6 +36,10 @@ var that;
             }.bind(this); 
             oReader.readAsArrayBuffer(oFile);
         },
+        /**
+         * onSubmitFile: Validates the uploaded data and creates new orders and order items if valid.
+         * This function checks for validation errors, such as invalid or missing data, before creating the order and order items.
+         */
         onSubmitFile: function () {
             var oModel = that.getModel("v2Model");
             var data = that.jsonData;  // Use the JSON data from the file
@@ -68,9 +76,6 @@ var that;
             MessageToast.show(validationErrors.join("\n"));
             return;
         }
-       
-   
-
 
             // Check for existing IDs and ItemIDs before creating new entries
             data.forEach(function (row) {

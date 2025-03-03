@@ -32,7 +32,8 @@
     "watch-listreportpage1": "cds watch --open listreportpage1/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-listreportpage": "cds watch --open listreportpage/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-listreportnew": "cds watch --open listreportnew/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-listreport": "cds watch --open listreport/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-listreport": "cds watch --open listreport/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-tabcoitainer": "cds watch --open tabcoitainer/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "sql": {

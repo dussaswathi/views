@@ -39,9 +39,23 @@ modules:
       - ordersdata.zip
       name: ordersdata
       target-path: resources/
+    - artifacts:
+      - tabcoitainer.zip
+      name: tabcoitainer
+      target-path: resources/
 - name: ordersdata
   type: html5
   path: app/ordersdata
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: tabcoitainer
+  type: html5
+  path: app/tabcoitainer
   build-parameters:
     build-result: dist
     builder: custom

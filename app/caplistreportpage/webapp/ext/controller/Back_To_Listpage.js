@@ -4,6 +4,9 @@ sap.ui.define([
     'use strict';
 
     return {
+        /**
+         * Onback: Function to navigate back to the previous page or fallback to a default page
+         */
            Onback: function(oEvent) {
             var oHistory = sap.ui.core.routing.History.getInstance();
             var sPreviousHash = oHistory.getPreviousHash();

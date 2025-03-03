@@ -5,6 +5,11 @@ sap.ui.define([
     'use strict';
 var that;
     return {
+        /**
+         * Onmultidelete: Handles the deletion of selected order items in the table.
+         * This function is triggered when the user attempts to delete multiple selected items from the Orders table.
+         * It shows a confirmation message and then deletes the selected items.
+         */
         Onmultidelete: function () {
             that = this;
             var oTable = sap.ui.getCore().byId("caplistreportpage::OrdersObjectPage--fe::table::Items::LineItem-innerTable");

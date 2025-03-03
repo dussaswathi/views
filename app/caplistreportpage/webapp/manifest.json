@@ -95,9 +95,11 @@
       }
     },
     "resources": {
-      "css": [ {
-        "uri": "css/style.css"
-      }]
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
     },
     "routing": {
       "config": {},
@@ -213,7 +215,6 @@
                       "visible": true,
                       "enabled": true,
                       "text": " Back "
-                    
                     }
                   }
                 }
@@ -239,6 +240,9 @@
         "sap.ui.controllerExtensions": {
           "sap.fe.templates.ObjectPage.ObjectPageController": {
             "controllerName": "caplistreportpage.ext.controller.Headerremove"
+          },
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "caplistreportpage.ext.controller.Orderid_Accending_Order"
           }
         }
       }

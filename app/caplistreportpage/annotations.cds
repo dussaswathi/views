@@ -14,6 +14,7 @@ annotate service.Orders with @(
             $Type : 'UI.DataField',
             Label : 'OrderID',
             Value : ID,
+          
         },
         {
             $Type : 'UI.DataField',
@@ -42,8 +43,9 @@ annotate service.OrderItems with @(
             $Type : 'UI.DataField',
             Label : 'Item ID',
             Value : ItemID,
-            
+ 
         },
+  
         {
             $Type : 'UI.DataField',
             Label : 'Product Name',

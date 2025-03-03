@@ -6,6 +6,10 @@ sap.ui.define([
     'use strict';
 var that;
     return {
+        /**
+         * Oncreate: Function to open the order creation fragment
+         * This function is triggered when the "Create" button is clicked to open a fragment for creating a new order.
+         */
         Oncreate: function(oEvent) {
             that=this;
             if (!that.sample) {
@@ -14,7 +18,11 @@ var that;
             }
             that.sample.open();  
         },
-
+        /**
+         * onSubmit: Function to validate and submit the new order and its items
+         * This function validates input fields for both the order and its items, then either creates the order and its items,
+         * or updates the existing ones in the model.
+         */
         onSubmit: function () {
             var sID = sap.ui.getCore().byId("idID").getValue();
             var sCustomerName = sap.ui.getCore().byId("idCustomerNames").getValue();
@@ -107,7 +115,11 @@ var that;
                 }
             });
         },
-       
+        /**
+         * onIDLiveChange: Function to check if the entered order ID exists in the model
+         * This function is triggered when the user types in the order ID field. It checks if the order ID already exists
+         * and updates the UI accordingly.
+         */
         onIDLiveChange: function (oEvent) {
             var sID = oEvent.getSource().getValue();
             var oModel = that.getModel("v2Model");
@@ -154,6 +166,13 @@ var that;
             }
         },
         onClose: function() {
+            sap.ui.getCore().byId("idID").setValue("");
+            sap.ui.getCore().byId("idCustomerNames").setValue("");
+            sap.ui.getCore().byId("idItemIDinputs").setValue("");
+            sap.ui.getCore().byId("idProductNameinputs").setValue("");
+            sap.ui.getCore().byId("idQuantityinputs").setValue("");
+            sap.ui.getCore().byId("idPriceinputs").setValue("");
+            sap.ui.getCore().byId("idOrderIDinput").setValue("");
             that.sample.close();  
         }
          

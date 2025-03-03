@@ -29,54 +29,13 @@ sap.ui.define([
         
             that._oMultiUpdateFragment.open();
         },
-        // onMultiUpdateSubmit: function () {
-        //     var oUpdateModel = that._oMultiUpdateFragment.getModel("updateModel");
-        //     var aUpdatedItems = oUpdateModel.getData(); 
-        //     var oModel = that.getModel("v2Model");
-            
-        //     var validationErrors = [];
-        //     aUpdatedItems.forEach(function (oUpdatedItem, index) {
-        //         var rowNumber = index + 1; // Get row number (starts from 1)
-        //         var itemID = oUpdatedItem.ItemID; // Get the ItemID for the current row
-        //         if (isNaN(oUpdatedItem.Quantity) || oUpdatedItem.Quantity <= 0) {
-        //             validationErrors.push("Row " + rowNumber + " (ItemID: " + itemID + "): Quantity must be a valid number greater than 0.");
-        //         }
-        //         if (isNaN(oUpdatedItem.Price) || oUpdatedItem.Price <= 0) {
-        //             validationErrors.push("Row " + rowNumber + " (ItemID: " + itemID + "): Price must be a valid number.");
-        //         }
-        //         if (!oUpdatedItem.ProductName || oUpdatedItem.ProductName.trim() === "") {
-        //             validationErrors.push("Row " + rowNumber + " (ItemID: " + itemID + "): ProductName is required.");
-        //         }
-        //     });
-        
-        //     if (validationErrors.length > 0) {
-        //         MessageBox.show(validationErrors.join("\n"), {
-        //             title: "Validation Errors",
-        //             icon: MessageBox.Icon.ERROR
-        //         });
-        //         return; 
-        //     }
-        //     // Proceed with the update after validation
-        //     aUpdatedItems.forEach(function (oUpdatedItem) {
-        //         var ItemID = oUpdatedItem.ItemID; 
-        //         oModel.update("/OrderItems('" + ItemID + "')", oUpdatedItem, {
-        //             success: function (Res) {
-        //                 MessageToast.show("Item updated successfully!");
-        //                 that._oMultiUpdateFragment.close();                      
-        //                 var oTable = sap.ui.getCore().byId("caplistreportpage::OrdersObjectPage--fe::table::Items::LineItem-innerTable");
-        //                 oTable.getBinding("items").refresh();
-        //                 oTable.removeSelections(true);
-        //             },
-        //             error: function (Err) {
-        //                 MessageToast.show("Error updating item " + oUpdatedItem.ItemID);
-        //             }
-        //         });
-        //     });
-        // },
+  
       
         onMultiUpdateSubmit: function () {
             var oUpdateModel = that._oMultiUpdateFragment.getModel("updateModel");
             var aUpdatedItems = oUpdateModel.getData(); 
+
+            
             var oModel = that.getModel("v2Model");
         
             var validationErrors = [];
@@ -138,3 +97,47 @@ sap.ui.define([
         
     };
 });
+      // onMultiUpdateSubmit: function () {
+        //     var oUpdateModel = that._oMultiUpdateFragment.getModel("updateModel");
+        //     var aUpdatedItems = oUpdateModel.getData(); 
+        //     var oModel = that.getModel("v2Model");
+            
+        //     var validationErrors = [];
+        //     aUpdatedItems.forEach(function (oUpdatedItem, index) {
+        //         var rowNumber = index + 1; // Get row number (starts from 1)
+        //         var itemID = oUpdatedItem.ItemID; // Get the ItemID for the current row
+        //         if (isNaN(oUpdatedItem.Quantity) || oUpdatedItem.Quantity <= 0) {
+        //             validationErrors.push("Row " + rowNumber + " (ItemID: " + itemID + "): Quantity must be a valid number greater than 0.");
+        //         }
+        //         if (isNaN(oUpdatedItem.Price) || oUpdatedItem.Price <= 0) {
+        //             validationErrors.push("Row " + rowNumber + " (ItemID: " + itemID + "): Price must be a valid number.");
+        //         }
+        //         if (!oUpdatedItem.ProductName || oUpdatedItem.ProductName.trim() === "") {
+        //             validationErrors.push("Row " + rowNumber + " (ItemID: " + itemID + "): ProductName is required.");
+        //         }
+        //     });
+        
+        //     if (validationErrors.length > 0) {
+        //         MessageBox.show(validationErrors.join("\n"), {
+        //             title: "Validation Errors",
+        //             icon: MessageBox.Icon.ERROR
+        //         });
+        //         return; 
+        //     }
+        //     // Proceed with the update after validation
+        //     aUpdatedItems.forEach(function (oUpdatedItem) {
+        //         var ItemID = oUpdatedItem.ItemID; 
+        //         oModel.update("/OrderItems('" + ItemID + "')", oUpdatedItem, {
+        //             success: function (Res) {
+        //                 MessageToast.show("Item updated successfully!");
+        //                 that._oMultiUpdateFragment.close();                      
+        //                 var oTable = sap.ui.getCore().byId("caplistreportpage::OrdersObjectPage--fe::table::Items::LineItem-innerTable");
+        //                 oTable.getBinding("items").refresh();
+        //                 oTable.removeSelections(true);
+        //             },
+        //             error: function (Err) {
+        //                 MessageToast.show("Error updating item " + oUpdatedItem.ItemID);
+        //             }
+        //         });
+        //     });
+        // },

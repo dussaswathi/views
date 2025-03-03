@@ -4,8 +4,7 @@
 		<content>
 			<f:SimpleForm>
 				<f:content>
-					
-					
+
 					<u:FileUploader id="fileUploader" width="100%" placeholder="Drop a file" name="myFileUpload" uploadUrl="/upload"
 						icon="sap-icon://attachment" fileType="xlsx" style="Emphasized" buttonText=" " uploadComplete=".onUploadComplete"
 						 change="handler.onFileSelectionChange"/>

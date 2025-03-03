@@ -1,0 +1,29 @@
+/* Enter your custom styles here */
+/* #idsearchfield{
+    height: 40%;
+} */
+.errorText {
+    background-color: lightgoldenrodyellow ;
+    color: white ;
+}
+
+.warningText {
+    background-color: lightpink ;
+    color: black ;
+}
+
+.successText {
+    background-color: lightyellow ;
+    color: white ;
+}
+
+.informationText {
+    background-color: lightgray ;
+    color: white ;
+}
+
+.defaultText {
+    background-color: lightsalmon ;
+    color: black ;
+}
+

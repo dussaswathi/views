@@ -7,6 +7,10 @@
     'use strict';
 var that;
     return {
+        /**
+         * Onupdate: Opens a fragment with input fields pre-filled with the selected order's details
+         * to allow the user to update the order information.
+         */
         Onupdate: function(oEvent) {
             that = this;
             var oTable = sap.ui.getCore().byId("caplistreportpage::OrdersList--fe::table::Orders::LineItem-innerTable");
@@ -40,6 +44,10 @@ var that;
         
             that.oUpdateFragment.open();
         },
+        /**
+         * onUpdateSubmit: Handles the submit of the updated order details.
+         * It sends the updated order data to the backend model.
+         */
         onUpdateSubmit: function (oEvent) {
             // var oModel = this.getOwnerComponent().getModel(); 
             var oModel = that.getModel("v2Model");
